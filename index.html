@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crypto4All</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" href="img/logo.svg" type="image/svg+xml" />
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__container">
+        <a href="#" class="header__container--logo main-logo">
+          <img
+            src="img/logo.svg"
+            width="34"
+            height="34"
+            alt="Crypto4Enthusiasts logo"
+          /><span class="main-logo__title">Crypto4All</span>
+        </a>
+        <nav class="navbar">
+          <ul class="navbar__list">
+            <li class="navbar__item navbar__item--active">
+              <a href="#" class="navbar__link navbar__link--active">Homepage</a>
+            </li>
+
+            <li class="navbar__item">
+              <a href="#" class="navbar__link">Markets</a>
+            </li>
+
+            <li class="navbar__item">
+              <a href="#" class="navbar__link">Buy Crypto</a>
+            </li>
+
+            <li class="navbar__item">
+              <a href="#" class="navbar__link">Sell Crypto</a>
+            </li>
+
+            <li class="navbar__item">
+              <a href="#" class="navbar__link">Blog</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="header__right-container">
+        <div class="navbar__menu-btn hidden">
+          <div class="navbar__menu-btn--burger"></div>
+        </div>
+
+        <a href="#" class="header__btn-wallet btn-outline">Wallet</a>
+      </div>
+    </header>
+
+    <!-- Overlay for mobile navigation, which is displayed after clicking on a hamburger button -->
+    <div class="overlay hidden">
+      <nav class="navbar-mobile">
+        <ul class="navbar-mobile__list">
+          <li class="navbar-mobile__item navbar-mobile__item--active">
+            <a href="#" class="navbar-mobile__link navbar-mobile__link--active"
+              >Homepage</a
+            >
+          </li>
+
+          <li class="navbar-mobile__item">
+            <a href="#" class="navbar-mobile__link">Markets</a>
+          </li>
+
+          <li class="navbar-mobile__item">
+            <a href="#" class="navbar-mobile__link">Buy Crypto</a>
+          </li>
+
+          <li class="navbar-mobile__item">
+            <a href="#" class="navbar-mobile__link">Sell Crypto</a>
+          </li>
+
+          <li class="navbar-mobile__item">
+            <a href="#" class="navbar-mobile__link">Blog</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <main>
+      <section class="homepage">
+        <div class="homepage__left-container">
+          <h1 class="homepage__left-container--title">
+            Buy & Sell Digital Assets In The Crypto4All
+          </h1>
+          <p class="homepage__left-container--text">
+            Crypto4All is the easiest, fastest and safest way to buy & sell
+            digital assets. Register now and get the latest data about all the
+            assets.
+          </p>
+          <a href="#" class="homepage__left-container--btn btn-fill"
+            >Get started now</a
+          >
+        </div>
+        <div class="homepage__right-container">
+          <img
+            src="img/homepage-crypto.jpg"
+            alt="Crypto trading image"
+            class="homepage__right-container--img"
+          />
+        </div>
+      </section>
+
+      <section class="popular">
+        <div class="popular-tab">
+          <ul class="popular-tab__nav">
+            <li>
+              <button
+                class="popular-tab__nav--btn popular-tab__nav--btn-active"
+              >
+                Crypto
+              </button>
+            </li>
+            <li><button class="popular-tab__nav--btn">NFT</button></li>
+            <li><button class="popular-tab__nav--btn">Metaverse</button></li>
+            <li><button class="popular-tab__nav--btn">Marketplace</button></li>
+            <li><button class="popular-tab__nav--btn">DeFi</button></li>
+            <li><button class="popular-tab__nav--btn">Solana</button></li>
+            <li><button class="popular-tab__nav--btn">Opensea</button></li>
+            <li><button class="popular-tab__nav--btn">BSC</button></li>
+            <li><button class="popular-tab__nav--btn">Polkadot</button></li>
+          </ul>
+
+          <ul class="popular-tab__content-ul" id="popular-tab__list"></ul>
+        </div>
+      </section>
+      <section class="market reveal">
+        <div class="market-container">
+          <div class="market-title">
+            <h2 class="section-title">Market Update</h2>
+            <a href="#" class="btn-link">See All Coins</a>
+          </div>
+
+          <div class="market-tab">
+            <ul class="market__nav">
+              <li>
+                <button class="market__nav--btn">
+                  <ion-icon
+                    name="search-outline"
+                    class="search-icon"
+                  ></ion-icon>
+                </button>
+              </li>
+              <li>
+                <button class="market__nav--btn market__nav--btn-active">
+                  View All
+                </button>
+              </li>
+              <li><button class="market__nav--btn">Metaverse</button></li>
+              <li><button class="market__nav--btn">NFT</button></li>
+              <li><button class="market__nav--btn">Polkadot</button></li>
+              <li><button class="market__nav--btn">BNB Chain</button></li>
+              <li><button class="market__nav--btn">Solana</button></li>
+              <li><button class="market__nav--btn">Avalanche</button></li>
+            </ul>
+
+            <div class="market-table__wrapper">
+              <table class="market-table">
+                <thead class="market-table__head">
+                  <tr class="market-table__row market-table__title">
+                    <th class="market-table__heading"></th>
+                    <th class="market-table__heading">#</th>
+                    <th class="market-table__heading">Name</th>
+                    <th class="market-table__heading">Price</th>
+                    <th class="market-table__heading">Market Cap</th>
+                  </tr>
+                </thead>
+
+                <tbody class="market-table__body" id="market-data">
+                  <!-- Content is inserted into this table dynamically from coinranking API by JS -->
+                </tbody>
+              </table>
+            </div>
+            <div class="pagenumbers" id="pagination"></div>
+          </div>
+        </div>
+      </section>
+      <section class="subscribe reveal">
+        <div class="subscribe__left-container">
+          <h2 class="subscribe__title">
+            Be the first one to know about crypto news!
+          </h2>
+          <span class="subscribe__text"
+            >Get crypto analysis, news and updates right to your inbox! Sign up
+            here so you don't miss any newsletter.</span
+          >
+          <a href="#" class="subscribe__btn btn-fill">Subscribe now</a>
+        </div>
+        <div class="subscribe__right-container">
+          <img
+            src="img/new.png"
+            alt="Animated crypto image"
+            class="subscribe__right-container--img"
+          />
+        </div>
+      </section>
+      <footer class="footer reveal">
+        <div class="footer__top-container">
+          <div class="footer__left-container">
+            <a href="#" class="footer__container--logo main-logo">
+              <img
+                src="img/logo.svg"
+                width="34"
+                height="34"
+                alt="Crypto4Enthusiasts logo"
+              /><span class="main-logo__title">Crypto4All</span>
+            </a>
+            <div class="footer__left-container--info">
+              <span>+420 999 987 329</span>
+              <span>crypto4all@gmail.com</span>
+              <span>Brno, Quikalkova 781, Czech Republic</span>
+            </div>
+          </div>
+          <div class="footer__right-container">
+            <div class="footer__column">
+              <h3 class="footer__column--title">Products</h3>
+              <ul class="footer__list">
+                <li class="footer__list-item">
+                  <a href="#" class="footer__link">Blockchain Explorer</a>
+                </li>
+                <li class="footer__list-item">
+                  <a href="#" class="footer__link">Crypto API</a>
+                </li>
+                <li class="footer__list-item">
+                  <a href="#" class="footer__link">Crypto Indices</a>
+                </li>
+                <li class="footer__list-item">
+                  <a href="#" class="footer__link">Jobs Board</a>
+                </li>
+                <li class="footer__list-item">
+                  <a href="#" class="footer__link">Sitemap</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="footer__column">
+              <h3 class="footer__column--title">Company</h3>
+              <ul class="footer__list">
+                <li class="footer__list-item">
+                  <a href="#" class="footer__link">About us</a>
+                </li>
+                <li class="footer__list-item">
+                  <a href="#" class="footer__link">Terms of use</a>
+                </li>
+                <li class="footer__list-item">
+                  <a href="#" class="footer__link">Privacy Policy</a>
+                </li>
+                <li class="footer__list-item">
+                  <a href="#" class="footer__link">Community Rules</a>
+                </li>
+                <li class="footer__list-item">
+                  <a href="#" class="footer__link">Disclaimer</a>
+                </li>
+                <li class="footer__list-item">
+                  <a href="#" class="footer__link">Methodology</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="footer__column">
+              <h3 class="footer__column--title">Support</h3>
+              <ul class="footer__list">
+                <li class="footer__list-item">
+                  <a href="#" class="footer__link">Request Form</a>
+                </li>
+                <li class="footer__list-item">
+                  <a href="#" class="footer__link">Contact Support</a>
+                </li>
+                <li class="footer__list-item">
+                  <a href="#" class="footer__link">FAQ</a>
+                </li>
+                <li class="footer__list-item">
+                  <a href="#" class="footer__link">Glossary</a>
+                </li>
+                <li class="footer__list-item">
+                  <a href="#" class="footer__link">Advertising</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="footer__column">
+              <h3 class="footer__column--title">Socials</h3>
+              <ul class="footer__list">
+                <li class="footer__list-item">
+                  <a href="#" class="footer__link">Facebook</a>
+                </li>
+                <li class="footer__list-item">
+                  <a href="#" class="footer__link">Twitter</a>
+                </li>
+                <li class="footer__list-item">
+                  <a href="#" class="footer__link">Telegram</a>
+                </li>
+                <li class="footer__list-item">
+                  <a href="#" class="footer__link">Instagram</a>
+                </li>
+                <li class="footer__list-item">
+                  <a href="#" class="footer__link">Interactive Chat</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom-container">
+          <span class="footer__copyright"
+            >&copy; 2022 Crypto4All. All rights reserved by
+            <a href="#" class="footer__copyright--link">Adam Jetmar</a></span
+          >
+          <div>
+            <img
+              src="img/footer/appstore-icon.svg"
+              alt="Download on app store icon"
+              width="120"
+              height="100"
+              class="footer__icon"
+            />
+            <img
+              src="img/footer/googleplay-icon.svg"
+              alt="Download on google play icon"
+              width="120"
+              height="100"
+              class="footer__icon"
+            />
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script src="js/main.js" defer></script>
+
+    <!-- ICONS -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
