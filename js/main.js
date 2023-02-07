@@ -10,6 +10,7 @@ const ROWS_PER_PAGE = 10;
 // Hamburger menu and navigation for mobile screens
 const menuBtn = document.querySelector(".navbar__menu-btn");
 const overlay = document.querySelector(".overlay");
+const navbar = document.querySelector('.header');
 const navbarMobileLinks = document.querySelectorAll(".navbar-mobile__link");
 const body = document.querySelector("body");
 let menuOpen = false;
@@ -192,24 +193,35 @@ const paginationButton = function (page, coins) {
   return button;
 };
 
-// Slide up animation for some sections
-function reveal() {
-  const reveals = document.querySelectorAll(".reveal");
+// sticky mobile navigation
+window.addEventListener("scroll", () => {
+  scrollPos = window.scrollY;
 
-  for (let i = 0; i < reveals.length; i++) {
-    const windowHeight = window.innerHeight;
-    const elementTop = reveals[i].getBoundingClientRect().top;
-    const elementVisible = 100;
-
-    if (elementTop < windowHeight - elementVisible)
-      reveals[i].classList.add("active");
+  if (window.scrollY > 20) {
+    navbar.classList.add("sticky");
+  } else {
+    navbar.classList.remove("sticky");
   }
-}
+});
 
-window.addEventListener("scroll", reveal);
+// Slide up animation for some sections
+// function reveal() {
+//   const reveals = document.querySelectorAll(".reveal");
+
+//   for (let i = 0; i < reveals.length; i++) {
+//     const windowHeight = window.innerHeight;
+//     const elementTop = reveals[i].getBoundingClientRect().top;
+//     const elementVisible = 100;
+
+//     if (elementTop < windowHeight - elementVisible)
+//       reveals[i].classList.add("active");
+//   }
+// }
+
+//window.addEventListener("scroll", reveal);
 
 // To check the scroll position on page load
-reveal();
+//reveal();
 
 // Display 4 popular tabs in popular secion
 const displayPopularCoins = function (coins) {

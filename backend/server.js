@@ -1,8 +1,7 @@
-import fetch from "node-fetch";
-import express from "express";
 import cors from "cors";
+import express from "express";
 import morgan from "morgan";
-
+import fetch from "node-fetch";
 const app = express();
 
 app.use(cors());
