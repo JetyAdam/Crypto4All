@@ -1,18 +1,20 @@
-const COIN_RANKING_API_URL = "http://localhost:5000/coins";
-const coinListEl = document.getElementById("market-data");
+const COIN_RANKING_API_URL = 'http://localhost:5500/coins';
+// const COIN_RANKING_API_URL = "https://crypto4all.onrender.com:5000/coins";
+// const COIN_RANKING_API_URL = "https://crypto4all.onrender.com:5000/coins/coinrankingcd15a650e918b72736a33f4d0c1dcdfed2e2aa8914ddf0af";
+const coinListEl = document.getElementById('market-data');
 let coinsData = [];
 
 // Variables for pagination
-const paginationEl = document.getElementById("pagination");
+const paginationEl = document.getElementById('pagination');
 let currentPage = 1;
 const ROWS_PER_PAGE = 10;
 
 // Hamburger menu and navigation for mobile screens
-const menuBtn = document.querySelector(".navbar__menu-btn");
-const overlay = document.querySelector(".overlay");
+const menuBtn = document.querySelector('.navbar__menu-btn');
+const overlay = document.querySelector('.overlay');
 const navbar = document.querySelector('.header');
-const navbarMobileLinks = document.querySelectorAll(".navbar-mobile__link");
-const body = document.querySelector("body");
+const navbarMobileLinks = document.querySelectorAll('.navbar-mobile__link');
+const body = document.querySelector('body');
 let menuOpen = false;
 
 const toggleOverlay = function () {
@@ -20,29 +22,29 @@ const toggleOverlay = function () {
     menuOpen = true;
 
     // Disable scrolling through body element when overlay is opened
-    body.style.height = "100vh";
-    body.style.overflow = "hidden";
+    body.style.height = '100vh';
+    body.style.overflow = 'hidden';
   } else {
     menuOpen = false;
 
     // Allow scrolling through body
-    body.style.height = "100%";
-    body.style.overflow = "visible";
+    body.style.height = '100%';
+    body.style.overflow = 'visible';
   }
 
-  menuBtn.classList.toggle("open");
-  overlay.classList.toggle("hidden");
+  menuBtn.classList.toggle('open');
+  overlay.classList.toggle('hidden');
 };
 
-menuBtn.addEventListener("click", toggleOverlay);
+menuBtn.addEventListener('click', toggleOverlay);
 for (link of navbarMobileLinks) {
-  link.addEventListener("click", toggleOverlay);
+  link.addEventListener('click', toggleOverlay);
 }
 
 // Helper function that converts a huge number to a billion notation for a  better readability
 const formatCash = (n) => {
   if (n < 1e3) return n;
-  if (n >= 1e4) return +(n / 1e9).toFixed(2) + " billion";
+  if (n >= 1e4) return +(n / 1e9).toFixed(2) + ' billion';
 };
 
 const loadCoins = async () => {
@@ -99,9 +101,9 @@ const displayCoins = (coins, page) => {
     </td>
 
     <td class="market-table__data market-table__data--price">
-      ${new Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency: "USD",
+      ${new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
       }).format(coin.price)}
     </td>
 
@@ -117,8 +119,8 @@ const displayCoins = (coins, page) => {
   </tr>
         `;
     })
-    .join("");
-  coinListEl.innerHTML = "";
+    .join('');
+  coinListEl.innerHTML = '';
   coinListEl.innerHTML = markup;
 };
 
@@ -126,18 +128,18 @@ loadCoins();
 
 const makeBtnActive = function () {
   // Remove active class from currently active button
-  let currentBtn = document.querySelector(".pagenumbers button.btn-active");
-  currentBtn.classList.remove("btn-active");
+  let currentBtn = document.querySelector('.pagenumbers button.btn-active');
+  currentBtn.classList.remove('btn-active');
 
   // Make new button active
   const btn = document.querySelector(
     `.pagenumbers [data-page="${currentPage}"]`
   );
-  btn.classList.add("btn-active");
+  btn.classList.add('btn-active');
 };
 
 const setupPagination = function (coins, wrapper, rowsPerPage) {
-  wrapper.innerHTML = "";
+  wrapper.innerHTML = '';
 
   let pageCount = Math.ceil(coins.length / rowsPerPage);
 
@@ -148,11 +150,11 @@ const setupPagination = function (coins, wrapper, rowsPerPage) {
 
   // Insert left arrow to HTML
   wrapper.insertAdjacentHTML(
-    "afterbegin",
+    'afterbegin',
     '<ion-icon name="chevron-back-outline" class="pagination-arrow" id="left-arrow"></ion-icon>'
   );
 
-  document.getElementById("left-arrow").addEventListener("click", function () {
+  document.getElementById('left-arrow').addEventListener('click', function () {
     if (currentPage <= 1) return;
 
     currentPage--;
@@ -162,11 +164,11 @@ const setupPagination = function (coins, wrapper, rowsPerPage) {
 
   // Insert Right arrow to HTML
   wrapper.insertAdjacentHTML(
-    "beforeend",
+    'beforeend',
     '<ion-icon name="chevron-forward-outline" class="pagination-arrow" id="right-arrow"></ion-icon>'
   );
 
-  document.getElementById("right-arrow").addEventListener("click", function () {
+  document.getElementById('right-arrow').addEventListener('click', function () {
     if (currentPage >= pageCount) return;
 
     currentPage++;
@@ -176,13 +178,13 @@ const setupPagination = function (coins, wrapper, rowsPerPage) {
 };
 
 const paginationButton = function (page, coins) {
-  let button = document.createElement("button");
+  let button = document.createElement('button');
   button.innerText = page;
   button.dataset.page = +page;
 
-  if (currentPage == page) button.classList.add("btn-active");
+  if (currentPage == page) button.classList.add('btn-active');
 
-  button.addEventListener("click", function () {
+  button.addEventListener('click', function () {
     // currentPage = page;
     currentPage = button.innerText;
     displayCoins(coins, currentPage);
@@ -194,13 +196,13 @@ const paginationButton = function (page, coins) {
 };
 
 // sticky mobile navigation
-window.addEventListener("scroll", () => {
+window.addEventListener('scroll', () => {
   scrollPos = window.scrollY;
 
   if (window.scrollY > 20) {
-    navbar.classList.add("sticky");
+    navbar.classList.add('sticky');
   } else {
-    navbar.classList.remove("sticky");
+    navbar.classList.remove('sticky');
   }
 });
 
@@ -225,9 +227,9 @@ window.addEventListener("scroll", () => {
 
 // Display 4 popular tabs in popular secion
 const displayPopularCoins = function (coins) {
-  const popularSectionCards = document.getElementById("popular-tab__list");
+  const popularSectionCards = document.getElementById('popular-tab__list');
   if (coins.length !== 4) coins = coins.slice(0, 4);
-  else if (typeof coins !== "array") return;
+  else if (typeof coins !== 'array') return;
 
   const markup = coins
     .map((coin) => {
@@ -246,16 +248,16 @@ const displayPopularCoins = function (coins) {
       </div>
 
       <div class="popular-tab__card--value">USD ${new Intl.NumberFormat(
-        "en-US",
+        'en-US',
         {
-          style: "currency",
-          currency: "USD",
+          style: 'currency',
+          currency: 'USD',
         }
       ).format(coin.price)}</div>
 
       
         <span class="popular-tab__card--badge badge badge-${
-          coin.change >= 0 ? "green" : "red"
+          coin.change >= 0 ? 'green' : 'red'
         }"
           >${coin.change}%</span
         >
@@ -263,8 +265,8 @@ const displayPopularCoins = function (coins) {
     </div>
   </li>`;
     })
-    .join("");
+    .join('');
 
-  popularSectionCards.innerHTML = "";
-  popularSectionCards.insertAdjacentHTML("afterbegin", markup);
+  popularSectionCards.innerHTML = '';
+  popularSectionCards.insertAdjacentHTML('afterbegin', markup);
 };
